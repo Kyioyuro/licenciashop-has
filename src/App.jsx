@@ -66,12 +66,14 @@ Precio: ${product.price}
           </div>
 
          <a
-            href={getWhatsAppLink(product)}
+            href={`https://wa.me/${phone}?text=${encodeURIComponent(
+              'Hola, quiero información sobre licencias y soporte técnico.'
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="block text-center bg-white text-black rounded-2xl py-3 mt-auto font-bold hover:opacity-90 transition"
+            className="bg-green-500 hover:bg-green-400 transition px-5 py-2 rounded-2xl font-semibold"
           >
-            Pedir ahora
+            WhatsApp
           </a>
         </div>
       </header>
@@ -162,10 +164,9 @@ Precio: ${product.price}
               </p>
 
               <a
-                href={`https://wa.me/${phone}?text=${encodeURIComponent(
-                  'Hola, quiero información sobre sus licencias y soporte técnico.'
-                )}`}
+                href={getWhatsAppLink(product)}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="block text-center bg-white text-black rounded-2xl py-3 mt-auto font-bold hover:opacity-90 transition"
               >
                 Pedir ahora
