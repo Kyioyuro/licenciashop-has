@@ -32,6 +32,19 @@ const products = [
     'Asistencia para empresas'
   ];
 
+  const phone = '522218288063';
+
+const getWhatsAppLink = (product) => {
+  const message = `Hola, vi ${product.name} en LicenciaShop y me interesa adquirirlo.
+
+Producto: ${product.name}
+Precio: ${product.price}
+
+¿Me puedes dar más información?`;
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+};
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       {/* HEADER */}
@@ -52,12 +65,13 @@ const products = [
             </div>
           </div>
 
-          <a
-            href="https://wa.me/2218288063"
+         <a
+            href={getWhatsAppLink(product)}
             target="_blank"
-            className="bg-green-500 hover:bg-green-400 transition px-5 py-2 rounded-2xl font-semibold"
+            rel="noopener noreferrer"
+            className="block text-center bg-white text-black rounded-2xl py-3 mt-auto font-bold hover:opacity-90 transition"
           >
-            WhatsApp
+            Pedir ahora
           </a>
         </div>
       </header>
@@ -79,7 +93,9 @@ const products = [
 
           <div className="flex gap-4 mt-8 flex-wrap">
             <a
-              href="https://wa.me/2218288063"
+              href={`https://wa.me/${phone}?text=${encodeURIComponent(
+                'Hola, quiero información sobre sus licencias y soporte técnico.'
+              )}`}
               target="_blank"
               className="bg-white text-black px-6 py-3 rounded-2xl font-bold hover:scale-105 transition"
             >
@@ -146,7 +162,9 @@ const products = [
               </p>
 
               <a
-                href="https://wa.me/2218288063"
+                href={`https://wa.me/${phone}?text=${encodeURIComponent(
+                  'Hola, quiero información sobre sus licencias y soporte técnico.'
+                )}`}
                 target="_blank"
                 className="block text-center bg-white text-black rounded-2xl py-3 mt-auto font-bold hover:opacity-90 transition"
               >
@@ -306,7 +324,9 @@ const products = [
           </p>
 
           <a
-            href="https://wa.me/2218288063"
+            href={`https://wa.me/${phone}?text=${encodeURIComponent(
+              'Hola, quiero información sobre Office, Windows y soporte técnico.'
+            )}`}
             target="_blank"
             className="inline-block mt-8 bg-black text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition"
           >
